@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>VOLCEX</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ========================= -->
+<!-- HOME -->
+<!-- ========================= -->
+
+<div id="home" class="schermata">
+
+    <h1>VOLCEX</h1>
+
+    <button onclick="mostra('nuovaPartita')">
+        GIOCA
+    </button>
+
+    <button onclick="mostra('statistiche')">
+        STATISTICHE
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- NUOVA PARTITA -->
+<!-- ========================= -->
+
+<div id="nuovaPartita"
+     class="schermata nascosta">
+
+    <h1>NUOVA PARTITA</h1>
+
+    <h2>Numero giocatori</h2>
+
+    <input
+        id="numeroGiocatori"
+        type="number"
+        min="1"
+        max="11"
+        placeholder="1 - 11"
+    >
+
+    <br><br>
+
+    <button onclick="iniziaGiocatori()">
+        CONTINUA
+    </button>
+
+    <button onclick="mostra('home')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- NOMI GIOCATORI -->
+<!-- ========================= -->
+
+<div id="nomi"
+     class="schermata nascosta">
+
+    <h1>GIOCATORI</h1>
+
+    <div id="listaNomi"></div>
+
+    <br>
+
+    <button onclick="iniziaPartita()">
+        INIZIA PARTITA
+    </button>
+
+    <button onclick="mostra('nuovaPartita')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- PARTITA -->
+<!-- ========================= -->
+
+<div id="partita"
+     class="schermata nascosta">
+
+    <h1>VOLCEX</h1>
+
+    <div id="obiettivo"></div>
+
+    <div id="listaGiocatori"></div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- STATISTICHE -->
+<!-- ========================= -->
+
+<div id="statistiche"
+     class="schermata nascosta">
+
+    <h1>STATISTICHE</h1>
+
+
+    <button onclick="mostraPalmares()">
+        🏆 PALMARES
+    </button>
+
+
+    <button onclick="mostraGuinness()">
+        🎯 GUINNESS
+    </button>
+
+
+    <button onclick="mostraIntercetti()">
+        🛡 INTERCETTI
+    </button>
+
+
+    <br><br>
+
+
+    <button onclick="mostra('home')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- PALMARES -->
+<!-- ========================= -->
+
+<div id="palmares"
+     class="schermata nascosta">
+
+    <h1>🏆 PALMARES</h1>
+
+    <div id="contenutoPalmares"></div>
+
+    <br>
+
+    <button onclick="mostra('statistiche')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- GUINNESS -->
+<!-- ========================= -->
+
+<div id="guinness"
+     class="schermata nascosta">
+
+    <h1>🎯 GUINNESS</h1>
+
+    <div id="contenutoGuinness"></div>
+
+    <br>
+
+    <button onclick="mostra('statistiche')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- INTERCETTI -->
+<!-- ========================= -->
+
+<div id="intercetti"
+     class="schermata nascosta">
+
+    <h1>🛡 INTERCETTI</h1>
+
+    <div id="contenutoIntercetti"></div>
+
+    <br>
+
+    <button onclick="mostra('statistiche')">
+        INDIETRO
+    </button>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
