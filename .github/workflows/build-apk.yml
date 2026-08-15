@@ -2,38 +2,38 @@ name: Build Volcex APK
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Scarica il progetto
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configura Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      - name: Installa dipendenze
+      - name: Install dependencies
         run: npm ci
 
-      - name: Sincronizza Capacitor
+      - name: Sync Capacitor
         run: npx cap sync android
 
-      - name: Configura Java
-        uses: actions/setup-java@v4
+      - name: Setup Java
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
 
-- name: Compila APK
-  working-directory: android
-  run: chmod +x gradlew && ./gradlew assembleDebug
+      - name: Build APK
+        working-directory: android
+        run: chmod +x gradlew && ./gradlew assembleDebug
 
-      - name: Carica APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Volcex-APK
